@@ -1,0 +1,82 @@
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body{
+      width: 100%;
+      height: 100%;
+      background: url(../img/login/bg_7fb769c373@2x.png) round no-repeat;
+    }
+    .count{
+      width: 480px;
+    margin-left: -240px;
+    font-weight: 700;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.15);
+    background: #fff;
+    margin: 80px auto;
+    padding-bottom:20px;
+    }
+   
+
+    .count h1 {
+      font-weight: 500;
+      font-size: 26px;
+      text-align: center;
+     
+    }
+
+    .form-group {
+      padding-top: 40px;
+    }
+
+    .form-group label {
+      padding-top: 10px;
+      width: 92px;
+      margin-left: 41px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      margin-left: 150px;
+    }
+
+    .spanspan {
+      color: red;
+    }
+    #yzm{
+      position: absolute;
+      top: 7px;
+      left: 228px;
+    }
+    /* 尾部 */
+    .footer{
+          text-align:center;
+          margin-top:20px;
+          padding-bottom:30px;
+      }
+      .link a{
+          margin:0 10px;
+      }
+      .copy{
+          margin-top:8px;
+      }
+      .liu{
+          outline:none;
+      }
+      .count img:first-child{
+        display: flex;
+        margin:0 auto;
+        width:120px;
+        height: 120px;
+      }
+      .count input{
+        width:280px;
+      }
+      .btn{
+        width:400px;
+        margin-left:46px;
+      }
+      
+  

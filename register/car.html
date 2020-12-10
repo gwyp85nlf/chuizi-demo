@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="referrer" content="no-referrer">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        html,
+        body {
+            width: 100%;
+            background: #999;
+
+        }
+
+        .xx a {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        /* 动态生成ul */
+        /* .aaa {
+        display: flex;
+        width: 1200px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+    }
+
+    .aaa .count {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 50px;
+        width: 1200px;
+        box-sizing: border-box;
+        border-top: 1px solid #000;
+        border-left: 1px solid #000;
+    }
+
+    .aaa li {
+        width: 20%;
+        height: 350px;
+        box-sizing: border-box;
+        background: #fff;
+        border-bottom: 1px solid #000;
+        border-right: 1px solid #000;
+        text-align: center;
+        list-style: none;
+    }
+
+    .aaa li h3 {
+        font-size: 17px;
+    }
+
+    .aaa li img {
+        width: 204px;
+        height: 204px;
+    }
+
+    .aaa li p {
+        font-size: 12px;
+        color: slategray;
+        margin-top: 10px;
+    }
+
+
+    .aaa li span {
+        /* text-decoration: line-through; */
+        /* margin-top: 7px;
+        padding-left: 10px;
+        font-size: 15px;
+        color: slategray;
+        } */
+
+        header {
+            background: #353639;
+            height: 45px;
+            margin-bottom: 120px;
+        }
+
+        header .ou1 {
+            display: flex;
+            justify-content: space-around;
+            width: 1200px;
+            margin: 0 auto;
+            line-height: 45px;
+        }
+
+        header .ou1 a {
+            text-decoration: none;
+            color: #c0c1c2;
+
+        }
+
+        header .ou1 p {
+            position: absolute;
+            right: 20px;
+            top: 0;
+        }
+
+        header nav {
+            background: #Fff;
+            /* position: fixed; */
+            width: 100%;
+        }
+
+        header nav input {
+            width: 300px;
+            height: 35px;
+            border: 1px solid darkgray;
+            border-radius: 17px;
+            margin-top: 17px;
+            outline: none;
+        }
+
+        header nav .ou2 {
+            display: flex;
+            width: 1200px;
+            margin: 0 auto;
+            line-height: 75px;
+            justify-content: space-between;
+        }
+
+
+        /* mian */
+
+
+        main {
+            width: 1220px;
+            /* height: 591px; */
+            margin: 0 auto;
+            background: snow;
+            border-radius: 10px;
+            margin-top: 30px;
+            overflow: hidden;
+            border: 1px solid #666;
+            margin-bottom: 30px;
+        }
+
+
+        main h1 {
+            height: 60px;
+            width: 1178px;
+            line-height: 60px;
+            font-size: 20px;
+            color: #666;
+            padding-left: 42px;
+            border-bottom: 1px solid #666;
+        }
+
+        main div {
+            margin: 0 auto;
+            width: 1218px;
+
+
+        }
+
+        main .empty {
+            background: url(../img/bj.png) center no-repeat;
+            height: 434px;
+        }
+
+        main button {
+            width: 142px;
+            height: 48px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 48px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        main h2 button:nth-of-type(1) {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            box-shadow: 1px 1px 5px darkgrey;
+            background: rgb(221, 220, 220);
+            margin-bottom: 0;
+            cursor: pointer;
+            outline: none;
+
+        }
+
+        main h2 button:nth-of-type(2) {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            box-shadow: 1px 1px 5px darkgrey;
+            background: rgb(221, 220, 220);
+            margin-bottom: 0;
+            cursor: pointer;
+            outline: none;
+        }
+
+        main button:nth-of-type(1) {
+
+            background: skyblue;
+            color: snow;
+            /* margin-left: 470px; */
+        }
+
+        main button:nth-of-type(2) {
+
+            background: rgb(221, 220, 220);
+            color: rgb(63, 62, 62);
+
+        }
+
+        /* 无商品时候让按钮出现 */
+        .emptybtn {
+
+            display: none;
+
+        }
+
+        /* 有商品的时候的css */
+
+        .title {
+            width: 1200px;
+            height: 39px;
+            border-bottom: 1px solid #999;
+            padding-left: 20px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+
+
+        .title span {
+            display: inline-block;
+            width: 137px;
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+
+        }
+
+        .title span:nth-of-type(1) {
+            text-align: left;
+            margin-right: 502px;
+        }
+
+
+        .list {
+            width: 100%;
+        }
+
+        .list li {
+            box-sizing: border-box;
+            width: 1220px;
+            height: 110px;
+            padding-left: 74px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #666;
+            position: relative;
+        }
+
+        .list li>a:nth-of-type(1) {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            background: black;
+            margin-right: 10px;
+        }
+
+        .xx {
+            box-sizing: border-box;
+            width: 380px;
+            height: 110px;
+            display: flex;
+            padding: 30px 0;
+            position: relative;
+            margin-right: 125px;
+        }
+
+        .xx>a {
+
+            height: 20px;
+            font-size: 17px;
+            color: black;
+
+        }
+
+        .xx>span {
+
+            position: absolute;
+            bottom: 26px;
+            left: 0;
+            color: #666;
+        }
+
+        .xx>span>span {
+            font-size: 14px;
+            margin-left: 20px;
+        }
+
+        .list h1 {
+            padding: 0;
+            width: 137px;
+            height: 110px;
+            border: none;
+            line-height: 110px;
+            text-align: center;
+
+        }
+
+        .list h2 {
+            padding: 0;
+            width: 137px;
+            height: 110px;
+            border: none;
+            line-height: 110px;
+            text-align: center;
+            color: #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .list h2>span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #666;
+            line-height: 30px;
+            font-weight: normal;
+            margin: 0 3px;
+        }
+
+        .list h2>span {
+            border: none;
+            color: black;
+            font-size: 16px;
+        }
+
+
+        .list h3 {
+            padding: 0;
+            width: 137px;
+            height: 110px;
+            border: none;
+            line-height: 110px;
+            text-align: center;
+            color: #666;
+
+        }
+
+        .list h4 {
+            padding: 0;
+            width: 137px;
+            height: 110px;
+            border: none;
+            line-height: 110px;
+            text-align: center;
+            color: #666;
+
+        }
+
+        /* 结算栏 */
+
+        .full {
+            display: flex;
+            width: 1218px;
+            height: 81px;
+            align-items: center;
+            position: relative;
+        }
+
+        .full>h1 {
+            width: 70px;
+            height: 20px;
+            font-size: 18px;
+            font-weight: normal;
+            border: none;
+            line-height: 18px;
+            padding-left: 15px;
+        }
+
+        .full>h1>input {
+            margin-right: 9px;
+        }
+
+        .full>h2 {
+            height: 12px;
+            line-height: 12px;
+            color: #666;
+            font-weight: normal;
+            font-size: 12px;
+            margin-right: 520px;
+        }
+
+        .full>h3 {
+
+            font-size: 16px;
+            height: 20px;
+            line-height: 20px;
+            color: #666;
+            position: absolute;
+            left: 690px;
+            top: 25px;
+
+        }
+
+        .full>h3>span {
+            color: red;
+            padding: 0 5px;
+        }
+
+        .full>h4 {
+            position: absolute;
+            left: 690px;
+            top: 44px;
+            font-size: 14px;
+            height: 20px;
+            line-height: 20px;
+            color: #666;
+
+        }
+
+        .full>h4>span {
+
+            padding: 0 5px;
+        }
+
+        .full>h5 {
+
+            margin-left: 150px;
+            font-size: 18px;
+        }
+
+        .full>h5>span {
+            color: red;
+        }
+
+        .full>h5 {
+            margin-left: 150px;
+            font-size: 18px;
+        }
+
+        .full>h6>button {
+
+            margin: 0 0 0 30px;
+        }
+
+        /* footer */
+
+        footer {
+            background: #fafafa;
+            padding: 20px 0;
+            margin-top: 217px;
+
+        }
+
+        .footer {
+
+            display: flex;
+            width: 1100px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+
+        footer .left {
+            display: flex;
+        }
+
+        footer .left dd {
+            padding-right: 90px;
+        }
+
+        footer .left dt {
+            font-weight: 700;
+            padding-bottom: 25px;
+            font-size: 12px;
+
+        }
+
+        footer .left dl {
+            line-height: 25px;
+            color: #969696;
+            font-size: 12px;
+        }
+
+        footer .right h4 {
+            font-size: 14px;
+            color: blue;
+            padding-bottom: 18px;
+        }
+
+        footer .right p {
+            font-size: 12px;
+            color: #999999;
+            line-height: 17px;
+        }
+
+        footer .right p:nth-child(3) {
+            text-align: right;
+        }
+
+        footer .right .btn {
+            line-height: 25px;
+            text-align: center;
+            color: blue;
+            width: 130px;
+            margin-top: 14px;
+            background: #fff;
+            border-radius: 5px;
+            border: 1px solid darkgray
+        }
+        header nav ul.active{
+        display: block;
+    }
+     .l-box>ul{
+        width: 300px;
+        position: absolute;
+        background-color: #fff;
+        border:2px solid #c7c1c1;
+        display: none;
+        padding-bottom:50px;
+        padding-left:10px;
+        z-index:10;
+    } 
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <span class="glyphicon glyphicon-piggy-bank logo" aria-hidden="true"></span>
+        <ul class="ou1">
+            <a href="">在线商城</a>
+            <a href="">坚果 Pro 3</a>
+            <a href="">坚果 Pro 2S</a>
+            <a href="">坚果 TNT 工作站</a>
+            <a href="">Smartisan OS</a>
+            <a href="">欢喜云</a>
+            <a href="">应用</a>
+            <a href="">荣誉与奖项</a>
+            <a href="">加入我们</a>
+            <a href="">下载 APP</a>
+            <p>
+                <a href="../chuizi/register/reg.html" id="reg">注册</a>
+                <a href="javascript:;" id="login">登录</a>
+                <a href="javascript:;" id="car">购物车</a>
+            </p>
+        </ul>
+        <nav>
+            <ul class="ou2">
+                <li><a href="">首页</a></li>
+                <li><a href="./list_copy.html?listName=151">手机</a></li>
+                <li><a href="./index.html">官方配件</a></li>
+                <li><a href="./list_copy.html?listName=157">服饰箱包</a></li>
+                <li><a href="./list_copy.html?listName=155">畅呼吸</a></li>
+                <li><a href="./list_copy.html?listName=302">打印机</a></li>
+                <li><a href="./list_copy.html?listName=313">扫地机器人</a></li>
+                <li><a href="./list_copy.html?listName=218">TNT显示屏</a></li>
+                <li><a href="./list_copy.html?listName=311">精选好物</a></li>
+                <li><a href="./index.html">健康服务</a></li>
+                <li><a href="./index.html">服务</a></li>
+               <!--  <input type="text"> -->
+                <div class="l-box">
+                    <input type="text">
+                    <ul></ul>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>购物清单</h1>
+
+        <!-- 添加empty后显示背景 -->
+        <div class="empty">
+            <div class="title">
+
+                <span>商品信息</span>
+                <span>单价</span>
+                <span>数量</span>
+                <span>小计</span>
+                <span>操作</span>
+
+            </div>
+
+            <ul class="list">
+
+            </ul>
+        </div>
+
+        <button class="emptybtn">登录</button>
+        <button class="emptybtn">现在选购</button>
+
+        <div class="full">
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="left">
+                <dl>
+                    <dt>订单服务</dt>
+                    <dd> 购买指南</dd>
+                    <dd> 订单服务</dd>
+                </dl>
+                <dl>
+                    <dt>服务支持</dt>
+                    <dd>零售门店</dd>
+                    <dd>自助服务</dd>
+                    <dd>维修门店</dd>
+                </dl>
+                <dl>
+                    <dt>媒体中心</dt>
+                    <dd>新闻动态</dd>
+                    <dd>官方视频</dd>
+                    <dd>图片资源</dd>
+                </dl>
+                <dl>
+                    <dt>关注我们</dt>
+                    <dd>新浪微博</dd>
+                    <dd>官方微信</dd>
+                    <dd>荣誉奖项</dd>
+                </dl>
+            </div>
+            <div class="right">
+                <h4>400-603-5000</h4>
+                <p>周一到周日 9:00-18:00</p>
+                <p>(仅收市话费)</p>
+                <button class="btn"><span class="xqy">在线帮助</span></button>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="../js/jquery.min.js"></script>
+    <!-- <script src="../js/car.js"></script> -->
+
+    <script>
+        
+  //搜索引擎事件
+  const Lul =document.querySelector('.l-box>ul'); 
+  //给文本框绑定input事件
+  const Linp=document.querySelector('.l-box>input'); 
+  Linp.addEventListener('input',function(){
+      const value = this.value.trim()//拿到文本框内容去除首位空格
+       if(!value)return/*  Lul.style='display:none' */
+       //准备发送请求动态创建script标签
+       const script = document.createElement('script');
+       //准备一个请求地址wd这个参数换成文本框里面的输入内容
+       const url = `https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=1446,32857,33124,33061,32973,33099,33101,32962,22159&wd=${value}&req=2&csor=1&cb=bindHtml&_=1605768936993`
+       script.src=url;
+       document.body.appendChild(script);
+       script.remove()
+  })
+  //全局准备一个jsonp的处理函数
+  function bindHtml(res){
+      //没有g这个数据就不渲染页面了
+      if(!res.g){
+         Lul.classList.remove('active')
+         return
+      }
+      let str = ''
+      for(let i=0;i<res.g.length;i++){
+          str += `
+          <li style="height:20px">${res.g[i].q}</li>
+          `
+      }
+      Lul.innerHTML = str;
+      Lul.classList.add('active')
+      Linp.addEventListener('blur',()=>{Lul.style='display:none'
+      window.history.go(0);
+      })
+     
+  }
+
+
+
+            //获取本地购物车数据库
+            let arr = JSON.parse(localStorage.getItem('car'));
+        let str1 = '';
+        console.log(arr,'arr')
+
+
+        function setPage() {
+            //定义bool
+            // 如果有buy==0就为false
+            // 让全选框取消
+            let bool = true;
+                arr.forEach(function (item) {
+                    if (item.buy == 0) {
+                        bool = false;
+                    }
+                })
+            if (localStorage.getItem('car')) {
+                //定义空字符串
+                var str = '';
+                // 定义单个数量
+                var onlyNum =0;
+                // 定义总数量
+                var allNums =0;
+                // 定义总价钱
+                var money =0;
+                //循环遍历arr
+                for (let key in arr) {
+                    if(arr[key].buy==1){
+                        onlyNum +=arr[key].num;
+                        money+=parseFloat(arr[key].price*arr[key].num)
+                    }
+                    allNums+=arr[key].num;
+                    str += `<li>
+                    <input name='checkbox' style='position: absolute;top: 48%;
+                left: 31px;' type="checkbox" class="check-one" goods_id="${arr[key].id}" ${arr[key].buy == 1 ? 'checked' : ''}>
+
+                    <a href="JavaScript:;"><img style="width: 100%;height: 100%" src="${arr[key].images}" alt=""></a>
+
+                    <h6 class="xx">
+                        <a href="JavaScript:;">${arr[key].name}</a>
+                        <span>${arr[key].title}</span>
+                    </h6>
+                    <h1>￥${arr[key].price}</h1>
+                    <h2>
+                        <button type="button" class="btn btn-default btn-lg active jian" name='red' id='${arr[key].id}' ${arr[key].num <= 1 ? 'disabled' : ''}>-</button>
+                        <span>${arr[key].num}</span>
+                        <button type="button" name='add' id='${arr[key].id}' class="btn btn-default btn-lg active">+</button>
+
+                    </h2>
+                    <h3>￥${arr[key].price}</h3>
+                    <h4 name='del' goodId='${arr[key].id}'>X</h4>
+                </li>`
+                }
+                //吧模板字符串写入到页面
+                $('.list').html(str);
+            }
+            else {
+                $('.list').html(`
+         <h1 style="width: 100%; font-size:40px"'>购物车里什么都没有，快去选购吧</h1>`);
+            }
+
+            //full定义str空字符串
+            str1 = `   
+            <h1><input type="checkbox" name="buyAll" id="" ${bool? 'checked' : ''}>全选</h1>
+                <h2>删除选中的商品</h2>
+                <h3>已选择<span>${onlyNum}</span>件商品</h3>
+                <h4>共计<span>${allNums}</span>件商品</h4>
+                <h5>应付总额：<span>￥${money}</span></h5>
+                <h6><button>现在结算</button></h6>`
+            //内容写入到full内
+            $('.full').html(str1);
+        }
+
+        //执行函数，生成基础页面
+        setPage()
+
+        //给页面添加点击事件
+        // 执行不同事件操作，实际上应该是对本地数据库中的数据，进行操作
+        // 根据新的操作结果，生成新的页面内容
+        $('main').click(function (e) {
+    e = e || window.event;
+    //点击target
+    let ele = e.target
+    // console.log(ele);
+
+
+
+    //全选效果
+    if (ele.getAttribute('name') == 'buyAll') {
+        //循环遍历本地数据库，将所有购买状态码改为1
+        arr.forEach(function (item) {
+            //如果是1,变成0
+            if (item.buy == 1) {
+                item.buy = 0
+            }
+            //如果是0,变成1
+            else if (item.buy == 0) {
+                item.buy = 1
+            }
+        })
+        //新生成的数组，重新设定为本地存储数据信息
+        localStorage.setItem('car', JSON.stringify(arr));
+        // 重新生成页面
+        setPage();
+    }
+
+    // 单选勾选取消效果
+    if (ele.getAttribute('name') == 'checkbox') {
+        //循环遍历本地数据库，将所有购买状态码改为1
+        //获取当前id值
+        let id = ele.getAttribute('goods_id');
+        arr.forEach(function (item) {
+            //判断勾选的input的id值与循环的id值是否相同
+            if (id == item.id) {
+                //如果是1,变成0
+                if (item.buy == 1) {
+                    item.buy = 0
+                }
+                //如果是0,变成1
+                else if (item.buy == 0) {
+                    item.buy = 1
+                }
+            }
+        })
+        //跟新本地存储
+        localStorage.setItem('car', JSON.stringify(arr));
+        // 重新生成页面
+        setPage();
+    }
+    // 点击减
+    if (ele.getAttribute('name') == 'red') {
+        //获取当前id值
+        let id = ele.getAttribute('id');
+        arr.forEach(function (item) {
+            if (id == item.id) {
+                item.num--;
+
+            }
+        })
+        //跟新本地存储
+        localStorage.setItem('car', JSON.stringify(arr));
+        // 重新生成页面
+        setPage();
+    }
+
+    //点击加
+    if (ele.getAttribute('name') == 'add') {
+        //获取当前id值
+        let id = ele.getAttribute('id');
+        arr.forEach(function (item) {
+            if (id == item.id) {
+                item.num++;
+            }
+        })
+        //跟新本地存储
+        localStorage.setItem('car', JSON.stringify(arr));
+        // 重新生成页面
+        setPage();
+    }
+
+
+
+
+    //点击删除
+    //   console.log(ele.getAttribute('name')=='del')
+    if (ele.getAttribute('name') == 'del') {
+        //获取当前id值
+        let id = ele.getAttribute('goodId');
+        arr.forEach(function (item, key) {
+            if (id == item.id) {
+                //删除数组
+                arr.splice(key, 1);
+            }
+        })
+        //跟新本地存储
+        localStorage.setItem('car', JSON.stringify(arr));
+        // 重新生成页面
+        setPage();
+    }
+
+
+
+
+    //删除选中
+    //   console.log(ele.getAttribute('name')=='delAll')
+    if (ele.getAttribute('name') == 'delAll') {
+        //获取当前id值
+        let id = ele.getAttribute('goodId');
+        //  arr.forEach(function(item,key){
+        //     if( id==item.id){
+        //         //删除数组
+        //        arr.splice(key,1);
+        //     }
+        //  })
+
+        //删除数组中的东西，会造成数组塌陷需要使用for循环，结尾--
+        for (let i = 0; i <= arr.length - 1; i++) {
+            console.log(arr[i].buy);
+
+            if (arr[i].buy == '1') {
+                arr.splice(i, 1);
+                i--;
+            }
+        }
+        //跟新本地存储
+        localStorage.setItem('car', JSON.stringify(arr));
+        // 重新生成页面
+        setPage();
+    }
+
+})
+    </script>
+</body>
+
+</html>

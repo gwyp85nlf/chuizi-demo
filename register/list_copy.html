@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 加载图片 -->
+    <meta name="referrer" content="no-referrer">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        background: #ededed;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .aaa {
+        display: flex;
+        width: 1200px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+    }
+
+    .aaa .count {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 50px;
+        width: 1200px;
+        box-sizing: border-box;
+        border-top: 1px solid #000;
+        border-left: 1px solid #000;
+    }
+
+    .aaa li {
+        width: 20%;
+        height: 350px;
+        box-sizing: border-box;
+        background: #fff;
+        border-bottom: 1px solid #000;
+        border-right: 1px solid #000;
+        text-align: center;
+        list-style: none;
+    }
+
+    .aaa li h3 {
+        font-size: 17px;
+    }
+
+    .aaa li img {
+        width: 204px;
+        height: 204px;
+    }
+
+    .aaa li p {
+        font-size: 12px;
+        color: slategray;
+        margin-top: 10px;
+    }
+
+
+    .aaa li span {
+        /* text-decoration: line-through; */
+        margin-top: 7px;
+        padding-left: 10px;
+        font-size: 15px;
+        color: slategray;
+    }
+
+    header {
+        background: #353639;
+        height: 45px;
+        margin-bottom: 60px;
+
+    }
+
+    header .ou1 {
+        display: flex;
+        justify-content: space-around;
+        width: 1200px;
+        margin: 0 auto;
+        line-height: 45px;
+    }
+
+    header .ou1 a {
+        text-decoration: none;
+        color: #c0c1c2;
+
+    }
+
+    header .ou1 p {
+        position: absolute;
+        right: 20px;
+        top: 0;
+    }
+
+    header nav {
+        background: #Fff;
+        position: fixed;
+        width: 100%;
+    }
+
+    header nav input {
+        width: 300px;
+        height: 35px;
+        border: 1px solid darkgray;
+        border-radius: 17px;
+        margin-top: 17px;
+        background: url(../img/pic8.jpg) no-repeat 10px/23px 23px;
+        outline: none;
+    }
+
+    header nav .ou2 {
+        display: flex;
+        width: 1200px;
+        margin: 0 auto;
+        line-height: 75px;
+        justify-content: space-between;
+    }
+
+    footer {
+        background: #fafafa;
+        margin-top: 120px;
+    }
+
+    .footer {
+        padding-top: 60px;
+        display: flex;
+        width: 1100px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+
+    footer .left {
+        display: flex;
+    }
+
+    footer .left dd {
+        padding-right: 90px;
+    }
+
+    footer .left dt {
+        font-weight: 700;
+        padding-bottom: 25px;
+        font-size: 12px;
+
+    }
+
+    footer .left dl {
+        line-height: 25px;
+        color: #969696;
+        font-size: 12px;
+    }
+
+    footer .right h4 {
+        font-size: 14px;
+        color: blue;
+        padding-bottom: 18px;
+    }
+
+    footer .right p {
+        font-size: 12px;
+        color: #999999;
+        line-height: 17px;
+    }
+
+    footer .right p:nth-child(3) {
+        text-align: right;
+    }
+
+    footer .right .btn {
+        line-height: 25px;
+        text-align: center;
+        color: blue;
+        width: 130px;
+        margin-top: 14px;
+        background: #fff;
+        border-radius: 5px;
+        border: 1px solid darkgray
+    }
+
+    header .logo {
+        color: red;
+        position: absolute;
+        top: 5px;
+        left: 30px;
+        font-size: 30px;
+    }
+
+    li:hover {
+        cursor: pointer;
+    }
+    .aaa a{
+        display: block;
+    }
+    header nav ul.active{
+        display: block;
+    }
+     .l-box>ul{
+        width: 300px;
+        position: absolute;
+        background-color: #fff;
+        border:2px solid #c7c1c1;
+        display: none;
+        padding-bottom:50px;
+        padding-left:10px;
+    
+    } 
+</style>
+
+<body>
+    <header>
+        <span class="glyphicon glyphicon-piggy-bank logo" aria-hidden="true"></span>
+        <ul class="ou1">
+            <a href="">在线商城</a>
+            <a href="">坚果 Pro 3</a>
+            <a href="">坚果 Pro 2S</a>
+            <a href="">坚果 TNT 工作站</a>
+            <a href="">Smartisan OS</a>
+            <a href="">欢喜云</a>
+            <a href="">应用</a>
+            <a href="">荣誉与奖项</a>
+            <a href="">加入我们</a>
+            <a href="">下载 APP</a>
+            <p>
+                <a href="../chuizi/register/reg.html" id="reg">注册</a>
+                <a href="javascript:;" id="login">登录</a>
+                <a href="javascript:;" id="car">购物车</a>
+            </p>
+        </ul>
+        <nav>
+            <ul class="ou2">
+                <li><a href="">首页</a></li>
+                <li><a href="?listName=151">手机</a></li>
+                <li><a href="../index.html">官方配件</a></li>
+                <li><a href="?listName=157">服饰箱包</a></li>
+                <li><a href="?listName=155">畅呼吸</a></li>
+                <li><a href="?listName=302">打印机</a></li>
+                <li><a href="?listName=313">扫地机器人</a></li>
+                <li><a href="?listName=218">TNT显示屏</a></li>
+                <li><a href="?listName=311">精选好物</a></li>
+                <li><a href="../index.html">健康服务</a></li>
+                <li><a href="../index.html">服务</a></li>
+              <!--   <input type="text"> -->
+                <div class="l-box">
+                    <input type="text">
+                    <ul></ul>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <div class="aaa">
+        <ul class="count"></ul>
+    </div>
+   
+    <footer>
+        <div class="footer">
+            <div class="left">
+                <dl>
+                    <dt>订单服务</dt>
+                    <dd> 购买指南</dd>
+                    <dd> 订单服务</dd>
+                </dl>
+                <dl>
+                    <dt>服务支持</dt>
+                    <dd>零售门店</dd>
+                    <dd>自助服务</dd>
+                    <dd>维修门店</dd>
+                </dl>
+                <dl>
+                    <dt>媒体中心</dt>
+                    <dd>新闻动态</dd>
+                    <dd>官方视频</dd>
+                    <dd>图片资源</dd>
+                </dl>
+                <dl>
+                    <dt>关注我们</dt>
+                    <dd>新浪微博</dd>
+                    <dd>官方微信</dd>
+                    <dd>荣誉奖项</dd>
+                </dl>
+            </div>
+            <div class="right">
+                <h4>400-603-5000</h4>
+                <p>周一到周日 9:00-18:00</p>
+                <p>(仅收市话费)</p>
+                <button class="btn"><span class="glyphicon glyphicon-question-sign"></span>在线帮助</button>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/1.js"></script>
+    <script>
+                //搜索引擎事件
+  const Lul =document.querySelector('.l-box>ul'); 
+  //给文本框绑定input事件
+  const Linp=document.querySelector('.l-box>input'); 
+  Linp.addEventListener('input',function(){
+      const value = this.value.trim()//拿到文本框内容去除首位空格
+       if(!value)return/*  Lul.style='display:none' */
+       //准备发送请求动态创建script标签
+       const script = document.createElement('script');
+       //准备一个请求地址wd这个参数换成文本框里面的输入内容
+       const url = `https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=1446,32857,33124,33061,32973,33099,33101,32962,22159&wd=${value}&req=2&csor=1&cb=bindHtml&_=1605768936993`
+       script.src=url;
+       document.body.appendChild(script);
+       script.remove()
+  })
+  //全局准备一个jsonp的处理函数
+  function bindHtml(res){
+      //没有g这个数据就不渲染页面了
+      if(!res.g){
+         Lul.classList.remove('active')
+         return
+      }
+      let str = ''
+      for(let i=0;i<res.g.length;i++){
+          str += `
+          <li style="height:20px">${res.g[i].q}</li>
+          `
+      }
+      Lul.innerHTML = str;
+      Lul.classList.add('active')
+      Linp.addEventListener('blur',()=>{Lul.style='display:none'
+      window.history.go(0);
+      })
+     
+  }
+
+
+        //浏览器的滚动事件
+        $(window).scroll(function () {
+            //大于nav高度时吸顶
+            if ($(window).scrollTop() > $('nav').height()) {
+                $('nav').css({ top: 0 })
+            } else {
+                $('nav').css({ top: 45 })
+            }
+        })
+
+        // $('.ou2 a').each(function(){
+
+        //     $(this).click(function(){
+        //     console.log(this);
+
+        // window.location.search，地址栏中参数，带有？的
+        // sustring(1),从下表是1，第二位开始截取，截取至字符串末位去掉？
+        // decodeURI()解析转化地址栏中的中文
+        //获取传参内容
+        let str = decodeURI(window.location.search.substring(1));
+        let urlValObj = getUrl(str);
+        let key = urlValObj.listName;
+        //使用代理服务器传参
+        $.ajax({
+            url: `/JD?category_id=${key}&page=1&sort=sort&num=30&type=shop&channel_id=1001`,
+            dataType: 'json',
+            async: false,
+            success: function (res) {
+                console.log(res);
+                // JS方法获取
+                // setLi($('.aaa ul'), res)
+                const data = res.data;
+                console.log(data);
+                //定义空字符串
+                let str = '';
+                // 循环遍历（对象只能用for in循环）
+                for (let key = 0; key < data.list.length; key++) {
+                    //声明变量存储li的值 要用+=
+                    str += `<li>
+                            <a href="http://127.0.0.1/chuizi/register/detail.html?id=${data.list[key].spuInfo.skuId}" display='block'>
+                            <img src="${data.list[key].spuInfo.images}" alt="">
+                            </a>
+                            <h3>${data.list[key].spuInfo.spuTitle}</h3>
+                            <p>${data.list[key].spuInfo.activeTitle}</p>
+                            <span>￥${data.list[key].spuInfo.price}</span>    
+                        </li>`
+                }
+                //    将li的内容写入到ul中
+                $('.aaa ul').html(str)
+            }
+        })
+
+
+        //点击购物车时，判断有没有localSTtorage
+        // 有就跳转页面，
+        $('#car').click(function () {
+
+            if (localStorage.getItem('login') == 1) {
+                window.location.href = './car.html';
+            } else {
+                window.alert('请您先登录');
+                window.location.href = './login.html';
+
+            }
+        })
+
+
+
+        // //判断登录事件
+        // console.log($('#login').text())
+        // if ($('#login').text() == '登录') {
+        //     //如果localStorage的状态码为1，让登录变为注销
+        //     if (localStorage.getItem('login') == 1) {
+        //         //点击注销时触发事件       
+
+        //         $('#login').text('注销').click(function () {
+        //             //如果点击确认，删除本地localstorage
+        //             //    否者直接return
+
+        //             if ($('#login').text() == '注销') {
+        //                 if (window.confirm('确定注销吗') == true) {
+        //                     localStorage.removeItem('login');
+        //                     //清除本地存储之后，text变成登录
+
+        //                     $('#login').text('登录').click(function () {
+        //                         window.location.href = './login.html';
+        //                     })
+        //                 } else {
+        //                     return;
+        //                 }
+        //             }
+        //         });
+        //     }
+        //     //如果变为登录跳转页面
+        //     else {
+        //         $('#login').text('登录').click(function () {
+        //             window.location.href = './login.html';
+        //         });
+
+        //     }
+        // }
+
+        if (localStorage.getItem('login') == 1) {
+            $('#login').text('注销');
+        }
+
+        if ($('#login').text() == '登录') {
+            $('#login').click(function () {
+                window.location.href = './register/login.html';
+            })
+        } else {
+            $('#login').click(function () {
+                $('#login').text('登录');
+                localStorage.removeItem('login');
+                window.location.reload();
+            })};
+
+    </script>
